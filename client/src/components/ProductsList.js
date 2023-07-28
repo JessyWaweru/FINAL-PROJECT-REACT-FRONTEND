@@ -18,9 +18,9 @@ const ProductsList = () => {
     }; 
   
 
-  // get all events
+  // get all products
   useEffect(() => {
-    fetch("  ")
+    fetch("http://localhost:3000/products")
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
@@ -67,7 +67,7 @@ const ProductsList = () => {
           ? filteredProducts.map((product) => (
               <ProductItem key={product.id} {...product} />
             ))
-          : products.map((product) => <EventItem key={product.id} {...product} />)}
+          : products.map((product) => <ProductItem key={product.id} {...product} />)}
       </div>
     </div>
     </div>

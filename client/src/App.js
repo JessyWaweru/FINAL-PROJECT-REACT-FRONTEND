@@ -1,8 +1,14 @@
 
 import ProductsList from "./components/ProductsList";
-
+import { BrowserRouter } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
+import Home from "./components/Home";
+import SignIn from "./components/signIn";
+import SignUp from "./components/signUp";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
+import ProductDetails from "./components/ProductDetails";
+import ProductsHome from "./components/ProductsHome";
 
 import AuthProvider from "./providers/Auth.provider";
 const SecureRoute = (Component) => {
@@ -33,9 +39,8 @@ function App() {
           path="/ProductDetails/:id"
           element={SecureRoute(ProductDetails)}
         ></Route>
-        <Route path="/products" element={SecureRoute(PrductsList)}></Route>
+        <Route path="/products" element={SecureRoute(ProductsList)}></Route>
         <Route path="/ProductsHome" element={SecureRoute(ProductsHome)}></Route>
-        <Route path="/reset" element={BaseRoute(ResetPassword)}></Route>
         <Route path="/ProductsList" element={SecureRoute(ProductsList)}></Route>
       </Routes>
       <Footer />

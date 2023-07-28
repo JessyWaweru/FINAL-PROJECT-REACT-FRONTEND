@@ -13,7 +13,7 @@ function Home() {
         <div className="relative h-[98%] flex items-center w-full justify-end pr-40 bg-[url(https://img.freepik.com/free-photo/blue-designed-grunge-concrete-texture-vintage-background-with-space-text-image_1258-108928.jpg)] bg-cover">
           <video autoPlay muted loop className="h-5/6">
             <source
-              src="https://player.vimeo.com/external/388150686.sd.mp4?s=2fb9355a498bb187f4d68c285f732c27a486961c&profile_id=164&oauth2_token_id=57447761"
+              src="https://player.vimeo.com/video/195975354?h=dee66404ac"
               type="video/mp4"
             />
           </video>
@@ -36,7 +36,7 @@ function Home() {
               </button>
             </Link>
           ) : (
-            <Link to="/events">
+            <Link to="/products">
               <button className="bg-rose-600 rounded-lg w-48 p-2 text-white hover:opacity-80">
                 <i className="fa-solid fa-calendar-days mr-2"></i>See all Products
                 <i className="fa-solid fa-arrow-right ml-1"></i>

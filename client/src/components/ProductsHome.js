@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 function ProductsHome() {
   const [products, setProducts] = useState([]);
   useEffect(() => {
-    fetch("")
+    fetch("http://localhost:3000/products")
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
@@ -34,7 +34,7 @@ function ProductsHome() {
           <ProductItem key={product.id} {...product} />
         ))}
       </div>
-      <Link to="/events">
+      <Link to="/products">
         <button className="bg-rose-600 rounded-lg w-48 p-2 text-white hover:opacity-80">
           <i className="fa-solid fa-calendar-days mr-2"></i>See all Products
           <i className="fa-solid fa-arrow-right ml-1"></i>

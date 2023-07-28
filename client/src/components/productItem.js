@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import formatDate from "../utilities/formatdate";
 
-export default function ProductItem({ name, location, price, id, image }) {
+
+export default function ProductItem({ name, description, id, image }) {
   
   return (
     <div key={id}
@@ -21,16 +21,12 @@ export default function ProductItem({ name, location, price, id, image }) {
       </div>
       <div className="px-4 py-2 flex  flex-col gap-4">
         <div className="flex gap-2">
-          <p>Location:</p>
-          <p className="font-bold">{location}</p>
-        </div>
-        <div className="flex gap-2">
-          <p>price:</p>
-          <p className="font-bold">{price}</p>
+          <p>Description</p>
+          <p className="font-bold">{description}</p>
         </div>
         <Link to={`/ProductDetails/${id}`}>
             <button className="bg-rose-600 hover:opacity-80 text-white px-4 py-2 rounded-lg">
-            Details
+            RANKINGS
            </button>
        </Link>
       </div>

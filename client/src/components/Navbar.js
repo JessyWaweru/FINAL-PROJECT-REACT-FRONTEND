@@ -28,7 +28,7 @@ function Navbar() {
               {" "}
               <li>
                 {" "}
-                <Link to="/events">
+                <Link to="/products">
                   <i className="fa-regular fa-calendar-days mr-1"></i>Products
                 </Link>{" "}
               </li>{" "}

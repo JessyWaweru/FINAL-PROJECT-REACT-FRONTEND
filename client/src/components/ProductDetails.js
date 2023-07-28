@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { useAuthContext } from "../providers/Auth.provider";
-
+import Table from "./Table";
 function ProductDetails() {
   const { id } = useParams();
   const [product, setProduct] = useState("");
@@ -12,7 +12,7 @@ function ProductDetails() {
 
   // get all product details
   useEffect(() => {
-    fetch(``)
+    fetch(`http://localhost:3000/products/${id}`)
       .then((response) => response.json())
       .then((data) => {
         setProduct(data);
@@ -22,7 +22,9 @@ function ProductDetails() {
       });
   }, [id]);
 
-  // handle delete
+  // wueh
+
+  const sortedProducts=Array.isArray(product)?product.sort((a,b)=>a.price-b.price):[]
  
  
   return (
@@ -103,8 +105,9 @@ function ProductDetails() {
         {/* aside */}
         <div className="border p-2 flex flex-col gap-5 h-fit rounded-lg">
           <div className="flex gap-2">
-            <p>Location:</p>
-            <p className="font-bold">{product.location}</p>
+            <h1>ECOMMERCE-RANKINGS</h1>
+
+          <Table product={product}/>
           </div>
 
 
