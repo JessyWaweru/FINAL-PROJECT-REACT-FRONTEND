@@ -8,6 +8,7 @@ const ProductsList = () => {
   //handling searchbar
   const [searchValue,setSearchValue]=useState("")
   const [filteredProducts, setFilteredProducts] = useState([]);
+  
     //search parameter is the title
     const handleSearch = () => {
       console.log("search button clicked")
@@ -15,6 +16,8 @@ const ProductsList = () => {
         product.name.toLowerCase().includes(searchValue.toLowerCase())
       );
       setFilteredProducts(filteredProducts);
+
+      
     }; 
   
 
@@ -42,7 +45,7 @@ const ProductsList = () => {
           <i className="fa-solid fa-heart"></i>
         </div>
         <h1 className="text-gray-700 border-b-2 border-rose-600 font-bold">
-          HOTTEST PRODUCTS
+          HOTTEST PRODUCTS' EVENTS
         </h1>
       </div>
 
@@ -50,11 +53,13 @@ const ProductsList = () => {
         <div className="border px-4 py-2 rounded-full flex-1 mr-10 flex justify-between items-center">
           <Searchbar setSearchValue={setSearchValue} handleSearch={handleSearch}/>
           <button onClick={handleSearch}>SEARCH</button>
+          
           <i className="fa-solid fa-magnifying-glass text-gray-500"></i>
         </div>
       </div>
 
       <div className="flex flex-wrap  gap-4 ">
+      
         {/* {Array(20)
           .fill(0)
           .map((e) => (

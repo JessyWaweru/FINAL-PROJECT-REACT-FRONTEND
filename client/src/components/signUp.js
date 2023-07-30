@@ -58,7 +58,7 @@ export default function SignUp() {
     })
     .then((data) => {
       localStorage.setItem("user", JSON.stringify(data));
-      window.location.href = "/events";
+      window.location.href = "/products";
     })
     .catch((error) => {
       toast.error(error.message);

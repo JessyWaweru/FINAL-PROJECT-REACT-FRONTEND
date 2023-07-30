@@ -24,7 +24,7 @@ function ProductDetails() {
 
   // wueh
 
-  const sortedProducts=Array.isArray(product)?product.sort((a,b)=>a.price-b.price):[]
+  
  
  
   return (
