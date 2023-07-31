@@ -12,7 +12,7 @@ const ProductsList = () => {
     //search parameter is the title
     const handleSearch = () => {
       console.log("search button clicked")
-       const filteredProduts=products.filter((product) =>
+       const filteredProducts=products.filter((product) =>
         product.name.toLowerCase().includes(searchValue.toLowerCase())
       );
       setFilteredProducts(filteredProducts);
@@ -35,9 +35,9 @@ const ProductsList = () => {
   }, []);
 
   return (
-    <div className="bg-https://images.unsplash.com/photo-1637625854255-d893202554f4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1854&q=80"
+    <div className="bg-https://images.unsplash.com/photo-1570876050997-2fdefb00c004?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80"
       style={{
-        backgroundImage:`url('https://images.unsplash.com/photo-1637625854255-d893202554f4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1854&q=80')`
+        backgroundImage:`url('https://images.unsplash.com/photo-1570876050997-2fdefb00c004?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80')`
       }}>
     <div className="w-3/4 m-auto p-4 flex flex-col gap-4 min-h-screen">
       <div className="flex gap-2 text-4xl items-center py-5 mx-auto">
@@ -45,7 +45,7 @@ const ProductsList = () => {
           <i className="fa-solid fa-heart"></i>
         </div>
         <h1 className="text-gray-700 border-b-2 border-rose-600 font-bold">
-          HOTTEST PRODUCTS' EVENTS
+          HOTTEST PRODUCTS
         </h1>
       </div>
 

@@ -5,7 +5,8 @@ console.log(product)
     const [sortBy,setSortBy]=useState('price')
     const platforms=['jumium','amazon','kilimall','shopify']
         const platformData=platforms.map((platform)=>{
-            const pro=product.find((p)=>p[platform])
+            console.log(platform)
+            const pro=[product].find((p)=>p[platform])
             if(!pro) {return <div>Loading...</div>}
         
             
@@ -65,8 +66,8 @@ console.log(product)
                         <td>{platform.daysToShip}</td>
                         <td>{platform.review}</td>
                         <td>{platform.productLocation}</td>
-                        <td>{platform.costBenefit.toFixed(2)}</td>
-                        <td>{platform.marginalBenefit.toFixed(2)}</td>
+                        <td>{platform.costBenefit}</td>
+                        <td>{platform.marginalBenefit}</td>
                     </tr>
                 ))}
             </tbody>

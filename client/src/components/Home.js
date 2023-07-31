@@ -10,7 +10,7 @@ function Home() {
   return (
     <div>
       <div className="h-screen">
-        <div className="relative h-[98%] flex items-center w-full justify-end pr-40 bg-[url(https://img.freepik.com/free-photo/blue-designed-grunge-concrete-texture-vintage-background-with-space-text-image_1258-108928.jpg)] bg-cover">
+        <div className="relative h-[98%] flex items-center w-full justify-end pr-40 bg-[url(https://images.unsplash.com/photo-1570876050997-2fdefb00c004?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80)] bg-cover">
           <video autoPlay muted loop className="h-5/6">
             <source
               src="https://player.vimeo.com/video/195975354?h=dee66404ac"

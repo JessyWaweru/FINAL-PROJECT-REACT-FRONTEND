@@ -10,7 +10,9 @@ import Navbar from "./components/Navbar";
 import ProductDetails from "./components/ProductDetails";
 import ProductsHome from "./components/ProductsHome";
 
+
 import AuthProvider from "./providers/Auth.provider";
+import { CartProvider } from "./components/Cart";
 const SecureRoute = (Component) => {
   return (
     <AuthProvider required={true}>
@@ -30,6 +32,7 @@ const BaseRoute = (Component) => {
 };
 function App() {
   return (
+    <CartProvider>
     <BrowserRouter>
       <Routes>
         <Route path="/" element={BaseRoute(Home)}></Route>
@@ -45,6 +48,7 @@ function App() {
       </Routes>
       <Footer />
     </BrowserRouter>
+    </CartProvider>
   );
 }
 

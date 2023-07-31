@@ -5,7 +5,7 @@ import { useAuthContext } from "../providers/Auth.provider";
 import Table from "./Table";
 function ProductDetails() {
   const { id } = useParams();
-  const [product, setProduct] = useState("");
+  const [product, setProduct] = useState([]);
   const auth = useAuthContext();
 
  

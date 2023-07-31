@@ -1,9 +1,12 @@
-import React from "react";
+import React,{useContext} from "react";
 import { Link } from "react-router-dom";
 
-
+import { CartContext } from "./Cart";
 export default function ProductItem({ name, description, id, image }) {
-  
+  const {addToCart}=useContext(CartContext)
+  const handleDetailsClick=()=>{
+    addToCart({name,description,id,image})
+  }
   return (
     <div key={id}
          className="w-72 mx-auto bg-white rounded-xl shadow-md overflow-hidden hover:scale-110 ease-in-out duration-300 m-3">
@@ -25,7 +28,8 @@ export default function ProductItem({ name, description, id, image }) {
           <p className="font-bold">{description}</p>
         </div>
         <Link to={`/ProductDetails/${id}`}>
-            <button className="bg-rose-600 hover:opacity-80 text-white px-4 py-2 rounded-lg">
+            <button onClick={handleDetailsClick}
+            className="bg-rose-600 hover:opacity-80 text-white px-4 py-2 rounded-lg">
             DETAILS 
            </button>
        </Link>
