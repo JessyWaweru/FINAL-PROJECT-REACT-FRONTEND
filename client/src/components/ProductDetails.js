@@ -35,7 +35,7 @@ function ProductDetails() {
           {product.name}
         </h1>
         <p className="text-white text-center pb-5 italic font-thin">
-          {product.description}
+          {product.about}
         </p>
       </div>
       {/* body */}

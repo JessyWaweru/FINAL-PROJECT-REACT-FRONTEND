@@ -1,5 +1,5 @@
 import React,{useState} from 'react'
-
+import { Link } from "react-router-dom";
 const Table=({product})=>{
 console.log(product)
     const [sortBy,setSortBy]=useState('price')
@@ -8,11 +8,8 @@ console.log(product)
             console.log(platform)
             const pro=[product].find((p)=>p[platform])
             if(!pro) {return <div>Loading...</div>}
-        
             console.log(pro)
-
         const{price,shipping_cost,days_to_ship,review,product_location}=pro[platform]
-
         const costBenefit=(parseFloat(1/price)+parseFloat(1/shipping_cost)*100).toFixed(2)
         const marginalBenefit=(parseFloat(((1/days_to_ship)-(1/review))*100)).toFixed(2)
         return{
@@ -24,25 +21,19 @@ console.log(product)
             productLocation:product_location,
             costBenefit:costBenefit,
             marginalBenefit:marginalBenefit
-            
         }
     }).filter(Boolean)
-    
-          
       const sortData=(data)=>{
         return data.sort((a,b)=>b[sortBy]-a[sortBy])
       }      
-     
       const sortedData=sortData(platformData)
-
     platformData.sort((a,b)=>b[sortBy]-a[sortBy])
     
+       
     return(
         <div>
         FILTER RANKINGS BELOW:
-        
        <div className='p-4'>
-        
         <select onChange={e=>setSortBy(e.target.value)}
           className='mb-4 px-2 py-1 border rounded'>
             <option value="price">Price</option>
@@ -64,8 +55,10 @@ console.log(product)
             </thead>
             <tbody>
                 {sortedData.map((platform,index)=>(
+                    
+                
                     <tr key={index} className='border-t'>
-                        <td className='p-2'>{platform.name}</td>
+                        <td className='p-2'><Link to={`https://${platform.name}.com`}><span className=' uppercase text-red-500 font-bold underline'>{platform.name}</span></Link></td>
                         <td className='p-2'>{platform.price}</td>
                         <td className='p-2' >{platform.ShippingCost}</td>
                         <td className='p-2'>{platform.daysToShip}</td>
@@ -74,12 +67,13 @@ console.log(product)
                         <td className='p-2'>{platform.costBenefit}%</td>
                         <td className='p-2'>{platform.marginalBenefit}%</td>
                     </tr>
+                    
                 ))}
+                
             </tbody>
         </table>
        </div>
        </div>
     )
 }
-
 export default Table

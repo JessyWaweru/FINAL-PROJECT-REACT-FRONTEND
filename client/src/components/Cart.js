@@ -1,7 +1,6 @@
 import React,{useContext,useEffect,useState} from 'react'
 import { CartContext } from './CartProvider'
 import ProductItem from './productItem'
-import ProductDetails from './ProductDetails'
 
 const Cart=()=>{
     const {cart}=useContext(CartContext)
