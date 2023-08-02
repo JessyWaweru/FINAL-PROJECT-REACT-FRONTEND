@@ -1,13 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect,useContext } from "react";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { useAuthContext } from "../providers/Auth.provider";
 import Table from "./Table";
+import { CartContext } from "./CartProvider";
 function ProductDetails() {
   const { id } = useParams();
   const [product, setProduct] = useState([]);
   const auth = useAuthContext();
-
+  const {cart}=useContext(CartContext)
  
 
   // get all product details
@@ -21,12 +22,7 @@ function ProductDetails() {
         console.error("Error:", error);
       });
   }, [id]);
-
-  // wueh
-
   
- 
- 
   return (
     <div className="bg-https://images.unsplash.com/photo-1637625854255-d893202554f4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1854&q=80"
       style={{
@@ -72,47 +68,20 @@ function ProductDetails() {
                 <i className="fa-solid fa-users"></i>
               </div>
               <h3 className="text-gray-700 border-b-2 border-rose-600 font-bold uppercase">
-                OTHER PRODUCTS YOU MIGHT LIKE;
+                ECOMMERCE RANKINGS;
               
               </h3>
             </div>
-            {/*<div>
-            {event.speakers && event.speakers.length>0 &&(
-            <div className="flex justify-evenly items-center"> 
-            {event.speakers.map((speaker)=>(
-              <div className="flex flex-col gap-2">
-                 
-                 <img
-                         src={speaker.image}
-                         alt="speaker"
-                         className="w-44 h-44 rounded-full border-4 border-gray-300"
-                  
-                        />
-                        
-                   <h3 className="text-2xl font-bold text-gray-700">NAME:---{speaker.name}---</h3>
-                   <h3 className="text-2xl font-bold text-gray-700">ORGANIZATION:---{speaker.organisation}---</h3>
-                   <h3 className="text-2xl font-bold text-gray-700">JOB TITLE:---{speaker.job_title}---</h3>
-                  
-                  
-                  
-                  </div>))}
-              </div>)}
-              
-             
-            </div>}
-          </div>
-        </div>
-        {/* aside */}
-        <div className="border p-2 flex flex-col gap-5 h-fit rounded-lg">
+        <div>
           <div className="flex gap-2">
-            <h1>ECOMMERCE-RANKINGS</h1>
+            
 
           <Table product={product}/>
           </div>
 
 
           <div className="flex gap-2">
-            <p>Price in ksh:</p>
+            <p></p>
             <p className="font-bold">{product.price}</p>
           </div>
          

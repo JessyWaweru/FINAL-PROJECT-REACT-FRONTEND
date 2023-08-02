@@ -32,6 +32,12 @@ function Navbar() {
                   <i className="fa-regular fa-calendar-days mr-1"></i>Products
                 </Link>{" "}
               </li>{" "}
+              <li>
+                {" "}
+                <Link to="/cart">
+                  <i className="fa-regular fa-calendar-days mr-1"></i>Search history
+                </Link>{" "}
+              </li>{" "}
               <li
                 onClick={logOut}
                 className="bg-rose-600 p-2 text-white rounded-lg hover:opacity-80 cursor-pointer"

@@ -1,17 +1,21 @@
-import React,{createContext,useState} from 'react'
+import React,{useContext} from 'react'
+import { CartContext } from './CartProvider'
+import ProductItem from './productItem'
+import ProductDetails from './ProductDetails'
 
-export const CartContext=createContext()
-
-export function CartProvider({children}){
-    const[cart,setCart]=useState([])
-
-    const addToCart=(product)=>{
-        setCart(currentCart=>[...currentCart,product])
-    }
+const Cart=()=>{
+    const {cart}=useContext(CartContext)
 
     return(
-        <CartContext.Provider value={{cart,addToCart}}>
-            {children}
-        </CartContext.Provider>
+        <div>
+            <h1 className="text-rose-600">SEARCH HISTORY</h1>
+             <ul>
+                {cart.map((product,index)=>(
+                   <ProductItem/>
+                ))}
+             </ul>
+        </div>
     )
 }
+
+export default Cart

@@ -1,11 +1,12 @@
 import React,{useContext} from "react";
-import { Link } from "react-router-dom";
-
-import { CartContext } from "./Cart";
+import { Link ,useNavigate} from "react-router-dom";
+import { CartContext } from "./CartProvider";
 export default function ProductItem({ name, description, id, image }) {
   const {addToCart}=useContext(CartContext)
+  const navigate=useNavigate()
   const handleDetailsClick=()=>{
     addToCart({name,description,id,image})
+    navigate('/cart')
   }
   return (
     <div key={id}

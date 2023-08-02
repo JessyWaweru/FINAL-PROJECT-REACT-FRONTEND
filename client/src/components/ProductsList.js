@@ -59,15 +59,7 @@ const ProductsList = () => {
       </div>
 
       <div className="flex flex-wrap  gap-4 ">
-      
-        {/* {Array(20)
-          .fill(0)
-          .map((e) => (
-            <EventItem key={Math.random()} />
-          ))} */}
-        {/*events.map((event) => (
-          <EventItem key={event.id} {...event} />
-        ))*/}
+  
         {filteredProducts.length > 0
           ? filteredProducts.map((product) => (
               <ProductItem key={product.id} {...product} />

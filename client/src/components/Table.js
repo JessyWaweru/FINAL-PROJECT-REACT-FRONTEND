@@ -9,12 +9,12 @@ console.log(product)
             const pro=[product].find((p)=>p[platform])
             if(!pro) {return <div>Loading...</div>}
         
-            
+            console.log(pro)
 
         const{price,shipping_cost,days_to_ship,review,product_location}=pro[platform]
 
-        const costBenefit=parseFloat(1/price)+parseFloat(1/shipping_cost)
-        const marginalBenefit=(1/days_to_ship)+review
+        const costBenefit=(parseFloat(1/price)+parseFloat(1/shipping_cost)*100).toFixed(2)
+        const marginalBenefit=(parseFloat(((1/days_to_ship)-(1/review))*100)).toFixed(2)
         return{
             name:platform,
             price:price,
@@ -38,40 +38,46 @@ console.log(product)
     platformData.sort((a,b)=>b[sortBy]-a[sortBy])
     
     return(
-       <div>
-        <select onChange={e=>setSortBy(e.target.value)}>
+        <div>
+        FILTER RANKINGS BELOW:
+        
+       <div className='p-4'>
+        
+        <select onChange={e=>setSortBy(e.target.value)}
+          className='mb-4 px-2 py-1 border rounded'>
             <option value="price">Price</option>
             <option value="costBenefit">Cost Benefit</option>
             <option value="marginalbenefit">Marginal Benefit</option>
         </select>
-        <table>
+        <table className='w-full border-collapse'>
             <thead>
-                <tr>
-                    <th>RANKINGS</th>
-                    <th>PRICE</th>
-                    <th>SHIPPING COST</th>
-                    <th>DAYS TO SHIP</th>
-                    <th>REVIEW</th>
-                    <th>PRODUCT LOCATION</th>
-                    <th>COST BENEFIT</th>
-                    <th>MARGINAL BENEFIT</th>
+                <tr className='bg-gray-200'>
+                    <th className='p-2'>RANKINGS</th>
+                    <th className='p-2'>PRICE (KSH)</th>
+                    <th className='p-2'>SHIPPING COST(KSH)</th>
+                    <th className='p-2'>SHIPPING DAYS</th>
+                    <th className='p-2'>STAR RATING</th>
+                    <th className='p-2'>SHIPPED FROM</th>
+                    <th className='p-2'>COST BENEFIT</th>
+                    <th className='p-2'>MARGINAL BENEFIT</th>
                 </tr>
             </thead>
             <tbody>
                 {sortedData.map((platform,index)=>(
-                    <tr key={index}>
-                        <td>{platform.name}</td>
-                        <td>{platform.price}</td>
-                        <td>{platform.ShippingCost}</td>
-                        <td>{platform.daysToShip}</td>
-                        <td>{platform.review}</td>
-                        <td>{platform.productLocation}</td>
-                        <td>{platform.costBenefit}</td>
-                        <td>{platform.marginalBenefit}</td>
+                    <tr key={index} className='border-t'>
+                        <td className='p-2'>{platform.name}</td>
+                        <td className='p-2'>{platform.price}</td>
+                        <td className='p-2' >{platform.ShippingCost}</td>
+                        <td className='p-2'>{platform.daysToShip}</td>
+                        <td className='p-2'>{platform.review}</td>
+                        <td className='p-2'>{platform.productLocation}</td>
+                        <td className='p-2'>{platform.costBenefit}%</td>
+                        <td className='p-2'>{platform.marginalBenefit}%</td>
                     </tr>
                 ))}
             </tbody>
         </table>
+       </div>
        </div>
     )
 }
