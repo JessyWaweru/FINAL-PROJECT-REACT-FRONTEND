@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import ProductItem from "./productItem";
 import Searchbar from "./Searchbar";
-
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import { faFire } from "@fortawesome/free-solid-svg-icons";
 const ProductsList = () => {
   const [products, setProducts] = useState([]);
 
@@ -42,7 +43,7 @@ const ProductsList = () => {
     <div className="w-3/4 m-auto p-4 flex flex-col gap-4 min-h-screen">
       <div className="flex gap-2 text-4xl items-center py-5 mx-auto">
         <div className="h-24 w-24 rounded-full bg-rose-600 text-white flex items-center justify-center">
-          <i className="fa-solid fa-heart"></i>
+        <FontAwesomeIcon icon={faFire} className="fa-solid"/>
         </div>
         <h1 className="text-gray-700 border-b-2 border-rose-600 font-bold">
           HOTTEST PRODUCTS

@@ -1,7 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useAuthContext } from "../providers/Auth.provider";
-
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import {faHouse} from '@fortawesome/free-solid-svg-icons'
+import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
+import {faHistory} from "@fortawesome/free-solid-svg-icons"
 function Navbar() {
   const auth = useAuthContext();
 
@@ -21,7 +24,7 @@ function Navbar() {
           <li>
             {" "}
             <Link to="/">
-              <i className="fa-sharp fa-solid fa-house mr-1"></i>Home
+             <FontAwesomeIcon icon={faHouse} className="mr-1"/>Home
             </Link>{" "}
           </li>
           {isAuth ? (
@@ -30,13 +33,13 @@ function Navbar() {
               <li>
                 {" "}
                 <Link to="/products">
-                  <i className="fa-regular fa-calendar-days mr-1"></i>Products
+                <FontAwesomeIcon icon={faShoppingCart} className="mr-1"/>Products
                 </Link>{" "}
               </li>{" "}
               <li>
                 {" "}
                 <Link to="/cart">
-                  <i className="fa-regular fa-calendar-days mr-1"></i>Search history
+                <FontAwesomeIcon icon={faHistory} className="mr-1"/>Search history
                 </Link>{" "}
               </li>{" "}
               <li

@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import ProductItem from "./productItem";
 import { Link } from "react-router-dom";
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import { faStar } from "@fortawesome/free-solid-svg-icons";
 function ProductsHome() {
   const [products, setProducts] = useState([]);
   useEffect(() => {
@@ -21,7 +23,7 @@ function ProductsHome() {
       }}>
       <div className="flex gap-2 text-4xl items-center py-5">
         <div className="h-24 w-24 rounded-full bg-rose-600 text-white flex items-center justify-center">
-          <i className="fa-solid fa-heart"></i>
+        <FontAwesomeIcon icon={faStar} className="fa-solid"/>
         </div>
         <h1 className="text-gray-700 border-b-2 border-rose-600 font-bold">
           OUR BEST SELECTIONS

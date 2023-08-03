@@ -4,6 +4,11 @@ import { useParams } from "react-router-dom";
 import { useAuthContext } from "../providers/Auth.provider";
 import Table from "./Table";
 import { CartContext } from "./CartProvider";
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import { faInfoCircle } from "@fortawesome/free-solid-svg-icons";
+import { faTrophy } from "@fortawesome/free-solid-svg-icons";
+
+
 function ProductDetails() {
   const { id } = useParams();
   const [product, setProduct] = useState([]);
@@ -54,7 +59,7 @@ function ProductDetails() {
           <div>
             <div className="flex gap-2 text-3xl items-center py-5">
               <div className="h-16 w-16 rounded-full bg-rose-600 text-white flex items-center justify-center">
-                <i className="fa-solid fa-star"></i>
+              <FontAwesomeIcon icon={faInfoCircle} className="fa-solid"/>
               </div>
               <h3 className="text-gray-700 border-b-2 border-rose-600 font-bold uppercase">
                 About the product
@@ -66,7 +71,7 @@ function ProductDetails() {
           <div>
             <div className="flex gap-2 text-3xl items-center py-5">
               <div className="h-16 w-16 rounded-full bg-rose-600 text-white flex items-center justify-center">
-                <i className="fa-solid fa-users"></i>
+              <FontAwesomeIcon icon={faTrophy} className="fa-solid"/>
               </div>
               <h3 className="text-gray-700 border-b-2 border-rose-600 font-bold uppercase">
                 ECOMMERCE RANKINGS;
