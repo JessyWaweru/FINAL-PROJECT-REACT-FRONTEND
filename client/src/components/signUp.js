@@ -11,6 +11,7 @@ export default function SignUp() {
   const [password, setPassword] = useState("");
   const [age, setAge] = useState("");
   const [gender, setGender] = useState("");
+  const [admin,setAdmin]=useState("")
   const [isLoading, setisLoading] = useState(false);
 
   /*useEffect(() => {
@@ -38,6 +39,7 @@ export default function SignUp() {
       password: password,
       age: age,
       gender: gender,
+      admin:admin
     };
 
     fetch("http://localhost:3000/users", {
@@ -130,6 +132,18 @@ export default function SignUp() {
             <option value="female">Female</option>
             <option value="rather not say">Rather not say</option>
           </select>
+        </div>
+        <h3 className="">ADMIN PASSCODE</h3>
+        <p>(leave blank if not admin)</p>
+        <div>
+          <input
+            type="text"
+            value={admin}
+            onChange={(event) => setAdmin(event.target.value)}
+            className={`border rounded-lg w-full p-3 opacity-0 hover:opacity-100 relative text-white`}
+          
+          />
+        
         </div>
         <button
           type="submit"

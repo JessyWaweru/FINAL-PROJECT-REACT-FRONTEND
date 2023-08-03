@@ -14,7 +14,7 @@ function ProductDetails() {
   const [product, setProduct] = useState([]);
   const auth = useAuthContext();
   const {cart}=useContext(CartContext)
- 
+ const [isAdmin,setIsAdmin]=useState(false)
 
   // get all product details
   useEffect(() => {
@@ -27,6 +27,30 @@ function ProductDetails() {
         console.error("Error:", error);
       });
   }, [id]);
+
+  useEffect(()=>{
+    const user=JSON.parse(localStorage.getItem('user'))
+    if(user && user.admin===true){
+      setIsAdmin(true)
+    }
+  },[])
+
+  const handleDelete = () => {
+    fetch(`http://localhost:3000/products/${id}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((response) => {
+        window.location.reload();
+        window.location.href = "/products";
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+  };
+
   
   return (
     <div className="bg-https://images.unsplash.com/photo-1637625854255-d893202554f4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1854&q=80"
@@ -55,6 +79,27 @@ function ProductDetails() {
               className="h-96 w-3/4 m-auto rounded-lg"
             />
           </div>
+          <div>
+
+          </div>
+
+          <div className="flex justify-between w-full border-t py-2">
+            { isAdmin &&(
+              <>
+              <Link to={`/updateProduct/${id}`}>
+                <button className="bg-gray-600 rounded-lg w-48 text-white hover:opacity-80 p-2 mr-2">
+                  Update
+                </button>
+              </Link>
+              <button
+                onClick={handleDelete}
+                className="bg-gray-600 rounded-lg w-48 text-white hover:opacity-80 p-2"
+              >
+                Delete
+              </button>
+              </>)}
+            </div>
+
           {/* about */}
           <div>
             <div className="flex gap-2 text-3xl items-center py-5">

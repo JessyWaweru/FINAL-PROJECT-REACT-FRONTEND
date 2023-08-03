@@ -12,6 +12,7 @@ import ProductsHome from "./components/ProductsHome"
 import Cart from "./components/Cart"
 import AuthProvider from "./providers/Auth.provider";
 import { CartProvider } from "./components/CartProvider";
+import UpdateProduct from "./components/updateProduct";
 const SecureRoute = (Component) => {
   return (
     <AuthProvider required={true}>
@@ -46,6 +47,10 @@ function App() {
         <Route path="/ProductsHome" element={BaseRoute(ProductsHome)}></Route>
         <Route path="/ProductsList" element={BaseRoute(ProductsList)}></Route>
         <Route path='/cart' element={SecureRoute(Cart)}/>
+        <Route
+          path="/updateProduct/:id"
+          element={SecureRoute(UpdateProduct)}
+        ></Route>
       </Routes>
       <Footer />
       </CartProvider>

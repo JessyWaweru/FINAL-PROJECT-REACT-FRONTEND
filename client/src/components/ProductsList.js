@@ -6,6 +6,7 @@ import { faFire } from "@fortawesome/free-solid-svg-icons";
 const ProductsList = () => {
   const [products, setProducts] = useState([]);
 
+
   //handling searchbar
   const [searchValue,setSearchValue]=useState("")
   const [filteredProducts, setFilteredProducts] = useState([]);
