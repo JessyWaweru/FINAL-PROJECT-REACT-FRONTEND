@@ -1,14 +1,14 @@
 import React,{useContext} from "react";
 import { Link ,useNavigate} from "react-router-dom";
 import { CartContext } from "./CartProvider";
-export default function ProductItem({ name, about, id, image }) {
+export default function ProductItem({ name, description, id, image }) {
   const {addToCart}=useContext(CartContext)
   const navigate=useNavigate()
   const handleDetailsClick=()=>{
-    addToCart({name,about,id,image})
+    addToCart({name,description,id,image})
     navigate('/cart')
   }
-  console.log(about)
+  console.log(description)
   return (
     <div key={id}
          className="w-72 mx-auto bg-white rounded-xl shadow-md overflow-hidden hover:scale-110 ease-in-out duration-300 m-3">
@@ -26,7 +26,7 @@ export default function ProductItem({ name, about, id, image }) {
       </div>
       <div className="px-4 py-2 flex  flex-col gap-4">
         <div className="flex gap-2">
-          <p className="font-bold">{about}</p>
+          <p className="font-bold">{description}</p>
         </div>
         <Link to={`/ProductDetails/${id}`}>
             <button onClick={handleDetailsClick}
