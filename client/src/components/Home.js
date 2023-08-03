@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState,useEffect} from "react";
 import Highlights from "./Highlights";
 import { Link } from "react-router-dom";
 import ProductsHome from "./ProductsHome";
@@ -7,6 +7,15 @@ import { useAuthContext } from "../providers/Auth.provider";
 function Home() {
   const auth = useAuthContext();
   const isAuth = auth?.user;
+  const [isAdmin,setIsAdmin]=useState(false)
+
+
+  useEffect(()=>{
+    const user=JSON.parse(localStorage.getItem('user'))
+    if(user && user.admin===true){
+      setIsAdmin(true)
+    }
+  },[])
   return (
     <div>
       <div className="h-screen">
@@ -19,7 +28,23 @@ function Home() {
           </video>
         </div>
         <div className="text-white text-xl flex flex-col pl-40 justify-center gap-6 absolute top-20 bg-white/30 h-full w-full">
-          <h1 className="text-6xl font-semibold uppercase">
+          {isAdmin &&(
+          <>
+          <h4  className="text-6xl font-semibold uppercase"> HELLO,
+            <span className="text-rose-600">ADMIN!</span></h4>
+            <h12 className="text-6xl font-semibold uppercase">WELCOME TO <br /><span className="text-rose-600">SHOPCRAWL</span></h12>
+            
+            <h8 className="text-3xl font-semibold uppercase"> <span className="text-rose-600">##</span>Fine tune the <span className="underline">Database</span> </h8>
+            <h8 className="text-3xl font-semibold uppercase"><span className="text-rose-600">##</span>With <span className="underline">Update</span> and <span className="underline">Delete</span> features</h8>
+          
+            </>)}
+          
+          </div>
+
+        <div className="text-white text-xl flex flex-col pl-40 justify-center gap-6 absolute top-20 bg-white/30 h-full w-full">
+          {!isAdmin &&(
+            <>
+<h1 className="text-6xl font-semibold uppercase">
             Welcome to<br />
             <span className="text-rose-600">SHOPCRAWL</span>
           </h1>
@@ -29,6 +54,9 @@ function Home() {
              <br />
            SHOPCRAWL has got you covered
           </p>
+            
+        
+          
           {!isAuth ? (
             <Link to="/signIn">
               <button className="bg-rose-600 rounded-lg w-48 p-2 text-white hover:opacity-80">
@@ -43,8 +71,10 @@ function Home() {
               </button>
             </Link>
           )}
-        </div>
-      </div>
+            </>)} 
+        </div> 
+       
+      </div> 
       <Highlights />
       <ProductsHome />
     </div>
