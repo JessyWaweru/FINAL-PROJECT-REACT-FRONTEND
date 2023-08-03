@@ -19,13 +19,16 @@ const Cart=()=>{
     
 
     return(
-        <div>
-            <h1 className="text-rose-600">SEARCH HISTORY</h1>
-             <ul>
+      <div className="bg-https://images.unsplash.com/photo-1570876050997-2fdefb00c004?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80"
+      style={{
+        backgroundImage:`url('https://images.unsplash.com/photo-1570876050997-2fdefb00c004?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80')`
+      }}>
+            <h1 className=" text-center uppercase text-3xl font-bold text-white bg-gradient-to-r from-black-500 to-red-500 p-4 rounded-lg shadow-lg  ">SEARCH HISTORY</h1>
+             <div  className="flex flex-wrap  gap-4 ">
                 {cart.map((product,index)=>(
                    <ProductItem key={product.id} {...product} />
                 ))}
-             </ul>
+             </div>
         </div>
     )
 }

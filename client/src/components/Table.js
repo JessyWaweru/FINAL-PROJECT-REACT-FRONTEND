@@ -27,12 +27,22 @@ console.log(product)
         return data.sort((a,b)=>b[sortBy]-a[sortBy])
       }      
       const sortedData=sortData(platformData)
+      console.log(sortedData)
     platformData.sort((a,b)=>b[sortBy]-a[sortBy])
     
        
     return(
         <div>
-        FILTER RANKINGS BELOW:
+            <div>
+                {sortedData.map((platform,index)=>
+               { if (index===0){
+                  return <h3 className='uppercase text-3xl font-bold text-white bg-gradient-to-r from-red-500 to-pink-500 p-4 rounded-lg shadow-lg animate-pulse'>SHOPCRAWL RECOMMENDS {platform.name}</h3>
+                }
+                
+            }
+               )}
+            </div>
+       <p className='text-white p-4 rounded-lg hover:text-red-500 transition-colors duration-300'>FILTER RANKINGS BELOW:</p> 
        <div className='p-4'>
         <select onChange={e=>setSortBy(e.target.value)}
           className='mb-4 px-2 py-1 border rounded'>
@@ -57,8 +67,8 @@ console.log(product)
                 {sortedData.map((platform,index)=>(
                     
                 
-                    <tr key={index} className='border-t'>
-                        <td className='p-2'><Link to={`https://${platform.name}.com`}><span className=' uppercase text-red-500 font-bold underline'>{platform.name}</span></Link></td>
+                    <tr key={index} className='relative border-t'>
+                        <td className='p-2'><Link to={`https://${platform.name}.com`}><span className=' uppercase text-red group  text-red-500 font-bold underline'>{platform.name}<span className='absolute bg-white text-red p-2 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 '>click {platform.name}'s shopping site</span></span></Link></td>
                         <td className='p-2'>{platform.price}</td>
                         <td className='p-2' >{platform.ShippingCost}</td>
                         <td className='p-2'>{platform.daysToShip}</td>
@@ -66,8 +76,9 @@ console.log(product)
                         <td className='p-2'>{platform.productLocation}</td>
                         <td className='p-2'>{platform.costBenefit}%</td>
                         <td className='p-2'>{platform.marginalBenefit}%</td>
-                    </tr>
                     
+                    </tr>
+                
                 ))}
                 
             </tbody>

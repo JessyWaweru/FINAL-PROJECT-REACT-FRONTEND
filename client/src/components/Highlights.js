@@ -5,7 +5,11 @@ function Highlights(){
 
     
     return(
-        <div className = "flex justify-evenly items-center w-3/4 m-auto h-[50vh] text-gray-700">
+        
+             <div className=" flex justify-evenly items-center w-3/4 m-auto h-[50vh] text-gray-700 bg-https://images.unsplash.com/photo-1637625854255-d893202554f4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1854&q=80"
+      style={{
+        backgroundImage:`url('https://images.unsplash.com/photo-1637625854255-d893202554f4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1854&q=80')`
+      }}>
             <div className="flex flex-col gap-4 items-center w-60">
                 <div className="rounded-full h-40 w-40 bg-gray-400 flex items-center justify-center text-white text-4xl hover:bg-rose-600"><i className="fa-solid fa-calendar-days"></i>
                 </div>

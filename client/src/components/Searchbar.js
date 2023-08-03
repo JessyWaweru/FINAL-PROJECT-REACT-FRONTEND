@@ -4,7 +4,7 @@ function Searchbar({ setSearchValue, handleSearch }) {
       <>
         <input
           placeholder="search products"
-          className="flex-1 outline-none"
+          className="flex-1 outline-none bg-black text-white"
           onChange={(e) => setSearchValue(e.target.value)}
           onClick={handleSearch}
         />

@@ -50,7 +50,7 @@ const ProductsList = () => {
       </div>
 
       <div className="flex items-center justify-between w-full">
-        <div className="border px-4 py-2 rounded-full flex-1 mr-10 flex justify-between items-center">
+        <div className="border px-4 py-2 rounded-full flex-1 mr-10 flex justify-between items-center text-white">
           <Searchbar setSearchValue={setSearchValue} handleSearch={handleSearch}/>
           <button onClick={handleSearch}>SEARCH</button>
           
