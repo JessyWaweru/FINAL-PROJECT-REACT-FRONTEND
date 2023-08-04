@@ -34,8 +34,8 @@ function Home() {
             <span className="text-rose-600">ADMIN!</span></h4>
             <h12 className="text-6xl font-semibold uppercase">WELCOME TO <br /><span className="text-rose-600">SHOPCRAWL</span></h12>
             
-            <h8 className="text-3xl font-semibold uppercase"> <span className="text-rose-600">##</span>Fine tune the <span className="underline">Database</span> </h8>
-            <h8 className="text-3xl font-semibold uppercase"><span className="text-rose-600">##</span>With <span className="underline">Update</span> and <span className="underline">Delete</span> features</h8>
+            <h8 className="text-2xl font-semibold uppercase"> <span className="text-rose-600">##</span>Fine tune the <span className="underline">Database</span> </h8>
+            <h8 className="text-2xl font-semibold uppercase"><span className="text-rose-600">##</span>With <span className="underline">Update</span> and <span className="underline">Delete</span> features</h8>
           
             </>)}
           

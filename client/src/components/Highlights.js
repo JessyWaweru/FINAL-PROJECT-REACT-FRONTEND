@@ -16,18 +16,18 @@ function Highlights(){
                 <div className="rounded-full h-40 w-40 bg-gray-400 flex items-center justify-center text-white text-4xl hover:bg-rose-600"> <FontAwesomeIcon icon={faSearch} className="fa-solid"/>
                 </div>
                 <h3 className="border-b-2 border-rose-600 pb-3 font-semibold">SEARCH-FOR-PRODUCTS</h3>
-                <p className="text-center">Simply enter the product name, like "Samsung A51," and our app will gather information from the four most popular e-commerce sites: Amazon, Jumium, Shopify, and Kilimall. </p>
+                <p className="text-center">Simply enter the product name,and our app will gather information from some of the  most popular e-commerce sites</p>
             </div>
             <div className="flex flex-col gap-4 items-center w-60">
                 <div className="rounded-full h-40 w-40 bg-gray-400 flex items-center justify-center text-white text-4xl hover:bg-rose-600"> <FontAwesomeIcon icon={faTrophy} className="fa-solid"/></div>
                 <h3 className="border-b-2 border-rose-600 pb-3 font-semibold">ON-DEMAND RANKINGS</h3>
-                <p className="text-center">The search results will be automatically ranked by cost and marginal benefits, so you can quickly find the most affordable options for you.</p>
+                <p className="text-center">The search results will be automatically ranked by cost and marginal benefits.Find what works for you</p>
             </div>
            
             <div className="flex flex-col gap-4 items-center w-60">
                 <div className="rounded-full h-40 w-40 bg-gray-400 flex items-center justify-center text-white text-4xl hover:bg-rose-600"> <FontAwesomeIcon icon={faHistory} className="fa-solid"/></div>
                 <h3 className="border-b-2 border-rose-600 pb-3 font-semibold">SEARCH HISTORY</h3>
-                <p className="text-center">For users with registered accounts, Shopcrawl keeps a record of their search history. This allows them to easily revisit previous searches and findings.</p>
+                <p className="text-center"> Shopcrawl keeps a record of your search history,enabling easy revision of previous searches and findings.</p>
             </div>
                   
         </div>
