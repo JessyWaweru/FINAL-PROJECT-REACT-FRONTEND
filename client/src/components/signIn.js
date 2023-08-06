@@ -6,6 +6,7 @@ import "react-toastify/dist/ReactToastify.css";
 export default function SignIn() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const[admin,setAdmin]=useState('')
   const [isloading, setIsLoading] = useState(false);
   // const [errorMsg, setErrorMsg] = useState("");
 
@@ -19,7 +20,7 @@ export default function SignIn() {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ email, password }),
+      body: JSON.stringify({ email, password,admin }),
     })
       .then((response) => {
         if (response.ok) {
@@ -67,6 +68,16 @@ export default function SignIn() {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             className="border rounded-lg w-full p-3"
+            required
+          />
+        </div>
+        <h4>Admin Passcode(leave blank if not admin)</h4>
+        <div>
+          <input
+            type="password"
+            value={admin}
+            onChange={(e) => setAdmin(e.target.value)}
+            className="text-password border rounded-lg w-full p-3"
             required
           />
         </div>

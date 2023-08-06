@@ -137,7 +137,7 @@ export default function SignUpAdmin() {
         <p></p>
         <div>
           <input
-            type="text"
+            type="password"
             value={admin}
             onChange={(event) => setAdmin(event.target.value)}
             className={`border rounded-lg w-full p-3 text-black text-opacity-0 hover:text-opacity-100`}
