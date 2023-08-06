@@ -4,14 +4,14 @@ import { Link } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-export default function SignUp() {
+export default function SignUpAdmin() {
   //const [csrfToken, setCsrfToken] = useState("");
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [age, setAge] = useState("");
   const [gender, setGender] = useState("");
-
+  const [admin,setAdmin]=useState("")
   const [isLoading, setisLoading] = useState(false);
 
   /*useEffect(() => {
@@ -39,7 +39,7 @@ export default function SignUp() {
       password: password,
       age: age,
       gender: gender,
-      
+      admin:admin
     };
 
     fetch("http://localhost:3000/users", {
@@ -133,7 +133,18 @@ export default function SignUp() {
             <option value="rather not say">Rather not say</option>
           </select>
         </div>
+        <h3 className="">ADMIN PASSCODE</h3>
+        <p></p>
+        <div>
+          <input
+            type="text"
+            value={admin}
+            onChange={(event) => setAdmin(event.target.value)}
+            className={`border rounded-lg w-full p-3 text-black text-opacity-0 hover:text-opacity-100`}
+          
+          />
         
+        </div>
         <button
           type="submit"
           className="bg-rose-600 rounded-lg w-48 p-3 mt-2 text-white hover:opacity-80 m-auto"
