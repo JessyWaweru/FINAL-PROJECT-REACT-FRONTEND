@@ -6,6 +6,9 @@ import {faHouse} from '@fortawesome/free-solid-svg-icons'
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import {faHistory} from "@fortawesome/free-solid-svg-icons"
 import { faShoppingBag } from "@fortawesome/free-solid-svg-icons";
+import { faSignInAlt } from "@fortawesome/free-solid-svg-icons";
+import { faUserPlus } from "@fortawesome/free-solid-svg-icons";
+import { faSignOutAlt } from "@fortawesome/free-solid-svg-icons";
 function Navbar() {
   const auth = useAuthContext();
 
@@ -50,7 +53,7 @@ function Navbar() {
                 className="bg-rose-600 p-2 text-white rounded-lg hover:opacity-80 cursor-pointer"
               >
                 {" "}
-                <i className="fa-solid fa-right-from-bracket mr-1"></i>
+                <FontAwesomeIcon icon={faSignOutAlt} className="mr-1"/>
                 Logout
               </li>
             </>
@@ -62,13 +65,19 @@ function Navbar() {
               <li>
                 {" "}
                 <Link to="/signIn">
-                  <i className="fa-solid fa-right-to-bracket mr-1"></i>Login
+                <FontAwesomeIcon icon={faSignInAlt} className="mr-1"/>Login
                 </Link>{" "}
               </li>
               <li className="bg-rose-600 p-2 text-white rounded-lg hover:opacity-80">
                 {" "}
                 <Link to="/signUp">
-                  Signup<i className="fa-solid fa-arrow-right ml-1"></i>
+                  Signup <FontAwesomeIcon icon={faUserPlus} className="ml-1"/>
+                </Link>{" "}
+              </li>{" "}
+              <li className="bg-rose-600 p-2 text-white rounded-lg hover:opacity-80">
+                {" "}
+                <Link to="/signUpAdmin">
+                  Admin Signup <FontAwesomeIcon icon={faUserPlus} className="ml-1"/>
                 </Link>{" "}
               </li>{" "}
             </>
