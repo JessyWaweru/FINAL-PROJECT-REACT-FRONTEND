@@ -107,14 +107,14 @@ export default function SignUp() {
             required
           />
         </div>
-        <h4>Age</h4>
+        <h4>Location</h4>
         <div>
           <input
             onChange={(event) => setAge(event.target.value)}
             value={age}
-            type="number"
-            min="0"
-            max="100"
+            type="text"
+            
+            
             className="border rounded-lg w-full p-3"
             required
           />
