@@ -2,7 +2,9 @@ import React, { useState } from "react";
 //import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
+//these components are used for displaying notifications.Toast notifications are non-intrusive messages that appear temporarily on the screen 
 import "react-toastify/dist/ReactToastify.css";
+
 
 export default function SignUpAdmin() {
   //const [csrfToken, setCsrfToken] = useState("");
@@ -43,7 +45,7 @@ export default function SignUpAdmin() {
     };
 
     fetch("http://localhost:3000/users", {
-      method: "POST",
+      method: "POST",//create
       headers: {
         "Content-Type": "application/json",
         "Access-Control-Allow-Origin": "http://localhost:3001",
@@ -60,7 +62,9 @@ export default function SignUpAdmin() {
     })
     .then((data) => {
       localStorage.setItem("user", JSON.stringify(data));
-      window.location.href = "/products";
+      //local storage is a mechanism that allows web apps to store data locally within the user's browser i.e localStorage.setItem(key,value).it stores a key value pair
+      
+      window.location.href = "/products";//to redirect to products route
     })
     .catch((error) => {
       toast.error(error.message);
