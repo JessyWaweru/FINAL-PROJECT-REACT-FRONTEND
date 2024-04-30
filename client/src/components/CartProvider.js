@@ -8,12 +8,13 @@ export function CartProvider({children}){
     const navigate=useNavigate()
 
     const addToCart=(product)=>{
-        setCart(currentCart=>[...currentCart,product])
+        setCart(currentCart=>[...currentCart,product/*currentCart becomes currentCart plus product*/])
         navigate('/cart')
     }
 
     return(
-        <CartContext.Provider value={{cart,addToCart}}>
+        <CartContext.Provider /*.Provider provides a way to share values between components 
+        without explicitly passing a prop through every level of the tree*/value={{cart,addToCart}}>
             {children}
         </CartContext.Provider>
     )
