@@ -10,14 +10,18 @@ export default function ProductForm({
   //console.log(eventData);
 
   const [name, setName] = useState(productData?.name || "");
+  //the optional chain part;if product id null/undefined,result of the expression is undefined,otherwise the result is the value of product.name.Then,if product.name evaluates to a truthy value,then the value is returned,else empty string is returned as the initial state,i.e name will be equal to the value returned
+  
   const [description, setDescription] = useState(productData?.description || "");
+  
+  
   const [about, setAbout] = useState(productData?.about || "");
  
   const [image, setImage] = useState(productData?.image || "");
  
 
   const onSubmit = (e) => {
-    e.preventDefault();
+    e.preventDefault();//prevents page from refreshing on occurrence of event(e)
     const newProduct= {
       name,
       description,
@@ -50,6 +54,7 @@ export default function ProductForm({
             type="text"
             value={name}
             onChange={(e) => setName(e.target.value)}
+
             className="border rounded-lg w-full p-3 text-gray-700"
           />
         </div>
